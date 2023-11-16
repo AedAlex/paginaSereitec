@@ -1,0 +1,255 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+
+    background: v.$negro;/*linear-gradient(135deg,v.$gris 0%,v.$blanco 33%,v.$blanco 63%, v.$gris 98%);*/
+    max-height: auto;
+/*
+    @include m.tablet {
+        background: linear-gradient(180deg,v.$blanco 0%,v.$blanco 48%,v.$negro 55%);
+    }
+
+    @include m.desktop {
+        background: linear-gradient(135deg,v.$blanco 28%, v.$negro 35%);
+    }
+
+    @include m.desktopXl {
+        background: linear-gradient(135deg,v.$blanco 23%, v.$negro 38%);
+    }
+
+*/
+
+}
+.barra {
+    max-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include m.tablet {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    @include m.desktop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
+
+.logo-nav {
+    width: 20rem;
+
+}
+
+.logo-nav picture, img {
+    margin-top:2rem;
+    width: 20rem;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+
+    @include m.desktop {
+        margin-top: 0;
+    }
+
+}
+
+.boton-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    @include m.tablet {
+        display: none;
+    }
+
+}
+
+.boton-menu img{
+    padding: 2rem 1rem;
+    width: 6rem;
+    height: auto;
+
+}
+
+.boton-menu input {
+    display: none;
+}
+
+.navegacion {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    @include m.tablet {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.navegacion a {
+    width: 100vw;
+    padding: 1rem 0 2rem 0;
+    text-shadow: 2px 2px 2px v.$gris;
+    color: v.$blanco;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    text-align: center;
+
+    @include m.tablet {
+        text-shadow: 2px 2px 2px v.$gris;
+        font-size: 1.5rem;
+        width: auto;
+        max-width: 22rem;
+        padding: 4rem 2rem;
+    }
+
+    @include m.desktop {
+        font-size: 1.6rem;
+        max-width: 25rem;
+        padding: 5.5rem 1rem;
+        margin-right: 2.5rem;
+    }
+
+    @include m.desktopXl {
+        font-size: 1.6rem;
+        max-width: 25rem;
+        padding: 5.5rem 1.5rem;
+        margin-right: 3rem;
+    }
+
+    &:hover {
+        transition: all .3s ease-in;
+        background-color: v.$gris;
+        color: v.$blanco;
+    }
+}
+
+.ocultar {
+    display: none;
+
+}
+
+.mostrar {
+    display: flex;
+}
+
+.barra-contactos {
+    max-height: 11rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(v.$negro, $alpha: 0.9);
+
+    @include m.tablet {
+        max-height: 6rem;
+        flex-direction: row;
+    }
+
+
+}
+
+.barra-contactos-logo {
+    padding: 0 1rem;
+    cursor: pointer;
+    width: auto;
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        transition: all .3s ease-in;
+        color: v.$dorado;
+    }
+
+    p {
+        font-size: 1.8rem;
+        color: v.$blanco;
+        &:hover{
+            color: v.$dorado;
+        }
+
+        @include m.tablet {
+            font-size: 2rem;
+        }
+
+    }
+}
+
+.barra-contactos-logo img {
+
+    display: none;
+
+    @include m.tablet {
+        display: flex;
+        max-width: 4rem;
+        max-height: auto;
+        padding: .5rem;
+        max-width: 5rem;
+    }
+
+}
+
+.barra-contactos-logo-face {
+    display: none;
+    @include m.tablet {
+        display: flex;
+    }
+}
+
+.mostrar {
+    display: flex;
+}
+
+.ocultar {
+    display: none;
+}
+
+
+//Comienza logo link whatsapp
+
+.whatsapp{
+    width: 6rem;
+    height: 6rem;
+    height: auto;
+    position: fixed;
+    z-index: 30;
+    right: 5rem;
+    bottom: 5rem;
+
+}
+
+.whatsapp-link{
+    display: flex;
+    flex-direction: column;
+    max-height: 6rem;
+    overflow: hidden;
+
+    &:hover{
+        .whatsapp-link-1 {
+            opacity: 0;
+            transform: translateY(-6rem);
+        }
+        .whatsapp-link-2 {
+
+            transform: translateY(-6.5rem);
+        }
+    }
+
+    img{
+        margin-top: 0;
+        min-width: 6rem;
+        max-height: 6rem;
+    }
+}

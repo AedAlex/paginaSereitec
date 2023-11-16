@@ -1,0 +1,23 @@
+{
+    "name": "aed_a/sereitec",
+    "description": "Pagina Web Sereitec MVC, SASS, Gulp",
+    "type": "project",
+    "autoload": {
+        "psr-4":{
+            "MVC\\": "./",
+            "Controllers\\": "./controllers",
+            "Model\\": "./models"
+        }
+    },
+
+    "authors": [
+        {
+            "name": "Alejandro Hernández López",
+            "email": "aed_alejandro@hotmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

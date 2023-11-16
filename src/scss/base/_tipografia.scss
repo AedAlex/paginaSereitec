@@ -1,0 +1,35 @@
+@use 'variables' as v;
+
+h1, h2, h3 {
+    font-family: v.$fuente_titulos;
+    margin: 0 0 calc(v.$separacion / 2) 0 ;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    text-shadow: 3px 3px 3px v.$negro;
+}
+h2 {
+    font-size: 3.6rem;
+    text-shadow: 2px 2px 2px v.$negro;
+}
+h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+p {
+    font-size: 2rem;
+}
+
+.nombre-pagina {
+    text-align: center;
+    margin: 5rem 0;
+    font-weight: v.$bold;
+}
+
+.descripcion-pagina {
+    text-align: center;
+}

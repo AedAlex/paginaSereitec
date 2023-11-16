@@ -1,0 +1,109 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h1{
+        padding: 4rem;
+        text-shadow: 1px 1px 1px v.$gris;
+    }
+}
+
+.imagen-contacto {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+        picture{
+            margin: 0;
+            padding: 0;
+        }
+    
+        img {
+            margin-bottom: -.4rem;
+            width: fit-content;
+        }
+    
+    }
+
+.contacto-contenedor {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    @include m.desktop {
+        flex-direction: row;
+    }
+}
+
+.contacto-datos {
+    display: flex;
+    flex-direction: column;
+    background-color: v.$negro;
+    color: v.$blanco;
+    width: 100%;
+    padding-left: 4rem;
+    justify-content: center;
+    margin: 0 auto;
+    
+    
+    h4{
+        color: v.$gris;
+        margin-bottom: 3rem;
+    }
+
+    @include m.desktop {
+        width: 50%;
+    }
+}
+
+.contacto-link-facebook {
+    color: v.$blanco;
+
+    p {
+        width: 100%;
+    }
+
+}
+
+.contacto-div-info {
+    margin-left: 1rem;
+    margin-bottom: 5rem;
+
+    @include m.desktopXl {
+        margin-left: 3rem;
+    }
+
+}
+
+
+.contacto-formulario {
+    width: 100%;
+    background-color: v.$blanco;
+
+    p{
+        text-align: center;
+    }
+
+    @include m.desktop {
+        width: 50%;
+        margin: 5rem;
+    }
+
+    form {
+        margin-bottom: 4rem;
+
+        @include m.desktop {
+            margin-bottom: 1rem;
+        }
+    }
+
+}
+
+
+
+
+
