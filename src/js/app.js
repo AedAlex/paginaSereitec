@@ -62,7 +62,6 @@ botonMenu.addEventListener('click', function() {
 /*Animación carrussel*/
 
 
-
 let slider = document.querySelector(".carrusel-slide");
 let sliderIndividual = document.querySelectorAll(".carrusel-slide-item");
 let sliderIndividualLast = sliderIndividual[sliderIndividual.length -1];
@@ -71,7 +70,7 @@ const botonIzq = document.querySelector("#boton-izq");
 const botonDer = document.querySelector("#boton-der");
 
 
-slider?.insertAdjacentElement('afterbegin', sliderIndividualLast);
+slider.insertAdjacentElement('afterbegin', sliderIndividualLast);
 
 function movDer() {
         let sliderIndividualFirst = document.querySelectorAll(".carrusel-slide-item") [0];
@@ -88,7 +87,7 @@ function movDer() {
         },500);
 }
 
-botonDer?.addEventListener('click', function(){
+botonDer.addEventListener('click', function(){
         movDer();
 } );
 
