@@ -184,6 +184,7 @@
     } 
 
     @include m.desktop {
+        width: 70%;
         flex-direction: row;
         min-height: 50rem;
     }

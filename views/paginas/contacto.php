@@ -47,7 +47,7 @@
                         <input type="text" placeholder="Tu nombre" id="nombre" name="contacto[nombre]" required >
                         <label for="telefono">Teléfono</label>
                         <input type="phone" placeholder="Tu teléfono" id="telefono" name="contacto[telefono]" required >
-                        <label for="Correo">Correo</label>
+                        <label for="correo">Correo</label>
                         <input type="email" placeholder="Tu correo" id="correo" name="contacto[correo]" required >
 
 

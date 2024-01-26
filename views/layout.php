@@ -35,7 +35,6 @@
                         <a href="/" id="secc-1">Inicio</a>
                         <a href="/paneles" id="secc-2">Paneles</a>
                         <a href="/aireAcondicionado" id="secc-3">Aire Acondicionado</a>
-                        <a href="/domotica" id="secc-4">Domótica</a>
                         <a href="/contacto" id="secc-5">Contacto</a>
                     </nav>
                 </div>    
@@ -103,13 +102,6 @@ echo $contenido;
                         <img loading="lazy" width="200" height="300" src="../build/img/airelogo.webp" alt="Logo aire acondicionado">
                     </picture>
                     <a href="/aireAcondicionado" class="a-aire">Aires Acondicionados</a>
-                </div>
-                <div class="div-info">
-                    <picture>
-                        <source srcset="../build/img/domoticalogo.webp" type="image/webp">
-                        <img loading="lazy" width="200" height="300" src="../build/img/domoticalogo.webp" alt="Logo domótica">
-                    </picture>
-                    <a href="/domotica" class="a-domotica">Domótica</a>
                 </div>
             </div>
             <div class="footer-div-info grid2">

@@ -41,6 +41,7 @@ function ocultarSeccion(){
         };
 
 
+
 /*menu checked*/
 let menu = document.getElementById('navegacion');
 let botonMenu = document.getElementById('botonMenu');
@@ -57,7 +58,24 @@ botonMenu.addEventListener('click', function() {
                 }
         });
 
+        //animacion para contador pagina paneles
 
+        let valueDisplay = document.querySelectorAll(".tarjeta-numero");
+        let intervaloContador = 5000;
+        
+        valueDisplay.forEach(valueDisplay => {
+                let startValue = 0;
+                let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+                let duracion = Math.floor(intervaloContador / endValue);
+                let contador = setInterval(function (){
+                        startValue += 1;
+                        valueDisplay.textContent = startValue;
+                        if(startValue == endValue) {
+                                clearInterval(contador);
+                        }
+                }, duracion);
+        
+        });
 
 /*Animación carrussel*/
 
@@ -133,6 +151,10 @@ function mostrarScroll() {
 
 
 
+
+
 window.addEventListener('scroll', mostrarScroll);
+
+
 
 

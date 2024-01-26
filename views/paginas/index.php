@@ -46,15 +46,6 @@
                 <span>Aire Acondicionado</span>
             </a>
         </div>
-        <div class="color">
-            <a href="/domotica">
-                <picture>
-                    <source srcset="../build/img/domoticalogo.webp" type="image/webp">
-                    <img loading="lazy" width="200" height="300" src="../build/img/domoticalogo.png" alt="icono domotica">
-                </picture>
-                <span>Domótica</span>
-            </a>
-        </div>
     </div>
     
 </section>

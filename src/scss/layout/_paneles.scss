@@ -64,7 +64,160 @@
 
 }
 
+//comienza seccion contador
 
+.paneles-contador {
+	width: 100%;
+	background-color: v.$blanco;
+}
+
+.contador-contenedor {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	justify-content:space-around;
+	width: 80%;
+
+	@include m.desktop {
+		flex-direction: row;
+	}
+}
+
+.paneles-contador-texto {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	justify-content: center;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+
+.contador-tarjeta {
+	background-color: v.$blanco;
+	//border-radius: 1rem;
+	border: .5rem solid v.$gris;
+	//box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	width: 70%;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	padding-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	@include m.desktop {
+		width: 25%;
+	}
+
+	img {
+		width: 50%;
+		margin: 0 auto;
+		padding: 1rem;
+		margin-top: 3rem;
+
+	}
+}
+
+.tarjeta-texto {
+	margin: 0 auto;
+	padding: 2rem;
+	font-family: v.$fuente_titulos;
+	font-size: 2.5rem;
+	font-weight: v.$bold;
+	color: v.$negro;
+	text-transform: uppercase;
+
+}
+
+.tarjeta-numero {
+	font-size: 6rem;
+	font-weight: v.$bold;
+	color: v.$verde;
+}
+
+//inicia seccion paneles info
+
+.paneles-info {
+	background-color: v.$negro;
+
+	h4 {
+		color: v.$blanco;
+	}
+}
+
+.paneles-info-div {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: auto;
+	justify-content: center center;
+	align-items: center;
+
+	@include m.desktop {
+
+		max-height: 40rem;
+	}
+
+
+	h4, p {
+		color: v.$blanco;
+		text-align: center;
+		padding-left: 2rem;
+		padding-right: 2rem;
+
+		@include m.tablet {
+			text-align: justify;
+		}
+	}
+}
+
+
+
+.info-div-img {
+	min-width: 25%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:cover;
+	min-height: 20rem;
+	display: none;
+
+	@include m.tablet {
+		display: block;
+		min-height: 40rem;
+	}
+
+	@include m.desktop {
+		min-width: 40%;
+	}
+}
+
+.info-div-img:nth-child(odd) {
+	border-right: 2px solid v.$blanco;
+	padding-right: 2rem;
+
+}
+
+.info-div-img:nth-child(even) {
+	border-left: 2px solid v.$blanco;
+	padding-left: 2rem;
+}
+
+.paneles-info-img-1 {
+	background-image: url(/build/img/ahorro-recibo.webp);
+
+}
+
+.paneles-info-img-2 {
+	background-image: url(/build/img/garantia.webp);
+}
+
+.paneles-info-img-3 {
+	background-image: url(/build/img/monitoreo.webp);
+	background-position: left;
+}
 
 
 

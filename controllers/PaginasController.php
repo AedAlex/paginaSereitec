@@ -3,7 +3,6 @@
 namespace Controllers;
 
 use MVC\Router;
-use PHPMailer\PHPMailer\PHPMailer;
 
 class PaginasController {
     public static function index(Router $router) {
@@ -37,32 +36,14 @@ class PaginasController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $respuestas = $_POST['contacto'];
-            
-            //Crear una instancia de PHP Mailer
-            $mail = new PHPMailer();
 
-            //Configurar SMTP
-            $mail->isSMTP();
-            $mail->Host = $_ENV['EMAIL_HOST'];
-            $mail->SMTPAuth = true;
-            $mail->Username = $_ENV['EMAIL_USER'];
-            $mail->Password = $_ENV['EMAIL_PASS'];
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = $_ENV['EMAIL_PORT'];
-
-            //Configurar el contenido del email
-
-            $mail->setFrom('admin@sereitec.com');
-            $mail->addAddress('ventas@sereitec.com', 'Sereitec.com');
-            $mail->Subject = 'Solicitud de Contacto desde la Página Web Sereitec.com';
-
-            //Habilitar HTML
-
-            $mail->isHTML(true);
-            $mail->CharSet = 'UTF-8';
-
-            //Definir contenido
-
+            ini_set( 'display_errors', 1 );
+            error_reporting( E_ALL );
+            $destino ="ventas@sereitec.com";
+            $headers = "MIME-Version: 1.0 \r\n";
+            $headers.= "Content-type: text/html; charset=UTF-8 \r\n";
+            $headers.= "From: PAGINA WEB SEREITEC.COM <admin@sereitec.com>\r\n";
+            $headers.= "To: ventas@sereitec.com\r\n";
             $contenido = '<html>';
             $contenido .= '<p style="text-transform: uppercase; font-weight: bold;">Tienes una nueva solicitud de contacto</p>';
             $contenido .= '<p><span style="font-weight: bold;">Nombre: </span>' .$respuestas['nombre'] . '</p>';
@@ -70,25 +51,20 @@ class PaginasController {
             $contenido .= '<p><span style="font-weight: bold;">Email: </span>' .$respuestas['correo'] . '</p>';
             $contenido .= '<p><span style="font-weight: bold;">Mensaje: </span>' .$respuestas['mensaje'] . '</p>';
             $contenido .='</html>';
+            
+            mail(
+                $destino,
+                "SOLICITUD DE CONTACTO Y MENSAJE DESDE LA PAGINA WEB",
+                $contenido,
+                $headers
+            );
+            $mensaje = "El correo ha sido enviado";
 
 
-            $mail->Body = $contenido;
-            $mail->AltBody = 'Tienes una nueva solicitud de contacto desde la página web';
-
-
-            //Enviar el email
-
-            if($mail->send()) {
-                $mensaje = "mensaje enviado correctamente";
-            } else {
-                $mensaje = "El mensaje no se pudo enviar...";
-            }
         }
         
         $router->render('paginas/contacto', [
             'mensaje' => $mensaje
-
-
         ]);
     }
-}
+    }
